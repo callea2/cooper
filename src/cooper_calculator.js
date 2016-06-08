@@ -11,7 +11,10 @@ CPRCalculator.prototype.VO2_max = function(obj) {
 };
 
 function setVO2Message (obj, value){
-  if (obj.VO2Value < 40) {
-    obj.VO2Message = "'Poor'"
+  if (obj.gender == 'male' && obj.VO2Value < 40) {
+    obj.VO2Message = "Poor"
+  }
+  if (obj.gender == 'female' && obj.VO2Value < 40) {
+    obj.VO2Message = "Below average"
   }
 };
