@@ -6,12 +6,17 @@ CPRCalculator.prototype.VO2_max = function(obj) {
   if (distance > 0) {
     var finalVO2 = (distance - 504.9) / 44.73;
     obj.VO2Value = parseFloat(finalVO2.toFixed(2));
-    setVO2Message(obj);
+    if (obj.gender == 'male') {
+      setVO2MessageMale(obj);
+    }
+    else {
+      setVO2MessageFemale(obj);
+    }
   }
 };
 
-function setVO2Message (obj, value){
-  if (obj.gender == 'male' && obj.age >= 18 && obj.age <= 25) {
+function setVO2MessageMale (obj, value){
+  if (obj.age >= 18 && obj.age <= 25) {
     if (obj.VO2Value < 30) {
       obj.VO2Message = "Very poor"
     }
@@ -35,7 +40,7 @@ function setVO2Message (obj, value){
     }
   }
 
-  else if (obj.gender == 'male' && obj.age >= 26 && obj.age <= 35) {
+  else if (obj.age >= 26 && obj.age <= 35) {
     if (obj.VO2Value < 30) {
       obj.VO2Message = "Very poor"
     }
@@ -59,7 +64,7 @@ function setVO2Message (obj, value){
     }
   }
 
-  else if (obj.gender == 'male' && obj.age >= 36 && obj.age <= 45) {
+  else if (obj.age >= 36 && obj.age <= 45) {
     if (obj.VO2Value < 26) {
       obj.VO2Message = "Very poor"
     }
@@ -83,7 +88,7 @@ function setVO2Message (obj, value){
     }
   }
 
-  else if (obj.gender == 'male' && obj.age >= 46 && obj.age <= 55) {
+  else if (obj.age >= 46 && obj.age <= 55) {
     if (obj.VO2Value < 25) {
       obj.VO2Message = "Very poor"
     }
@@ -107,7 +112,7 @@ function setVO2Message (obj, value){
     }
   }
 
-  else if (obj.gender == 'male' && obj.age >= 56 && obj.age <= 65) {
+  else if (obj.age >= 56 && obj.age <= 65) {
     if (obj.VO2Value < 22) {
       obj.VO2Message = "Very poor"
     }
@@ -131,7 +136,7 @@ function setVO2Message (obj, value){
     }
   }
 
-  else if (obj.gender == 'male' && obj.age > 65) {
+  else if (obj.age > 65) {
     if (obj.VO2Value < 20) {
       obj.VO2Message = "Very poor"
     }
@@ -154,13 +159,10 @@ function setVO2Message (obj, value){
       obj.VO2Message = "Excellent"
     }
   }
+};
 
-
-
-
-
-
-  else if (obj.gender == 'female' && obj.age >= 18 && obj.age <= 25) {
+function setVO2MessageFemale (obj, value){
+  if (obj.age >= 18 && obj.age <= 25) {
     if (obj.VO2Value < 28) {
       obj.VO2Message = "Very poor"
     }
@@ -184,7 +186,7 @@ function setVO2Message (obj, value){
     }
   }
 
-  else if (obj.gender == 'female' && obj.age >= 26 && obj.age <= 35) {
+  else if (obj.age >= 26 && obj.age <= 35) {
     if (obj.VO2Value < 26) {
       obj.VO2Message = "Very poor"
     }
@@ -208,7 +210,7 @@ function setVO2Message (obj, value){
     }
   }
 
-  else if (obj.gender == 'female' && obj.age >= 36 && obj.age <= 45) {
+  else if (obj.age >= 36 && obj.age <= 45) {
     if (obj.VO2Value < 22) {
       obj.VO2Message = "Very poor"
     }
@@ -232,7 +234,7 @@ function setVO2Message (obj, value){
     }
   }
 
-  else if (obj.gender == 'female' && obj.age >= 46 && obj.age <= 55) {
+  else if (obj.age >= 46 && obj.age <= 55) {
     if (obj.VO2Value < 20) {
       obj.VO2Message = "Very poor"
     }
@@ -256,7 +258,7 @@ function setVO2Message (obj, value){
     }
   }
 
-  else if (obj.gender == 'female' && obj.age >= 56 && obj.age <= 65) {
+  else if (obj.age >= 56 && obj.age <= 65) {
     if (obj.VO2Value < 18) {
       obj.VO2Message = "Very poor"
     }
@@ -280,7 +282,7 @@ function setVO2Message (obj, value){
     }
   }
 
-  else if (obj.gender == 'female' && obj.age > 65) {
+  else if (obj.age > 65) {
     if (obj.VO2Value < 17) {
       obj.VO2Message = "Very poor"
     }
