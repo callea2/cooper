@@ -1,1 +1,6 @@
+/log/*.log
+/tmp
 .DS_Store
+.bundle
+.idea
+.idea/*
