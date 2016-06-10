@@ -4,6 +4,8 @@ gem 'rails', '4.2.6'
 gem 'pg', '~> 0.15'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'rack-cors', require: 'rack/cors'
+gem 'responders', '~> 2.2'
 
 group :development, :test do
   gem 'pry'

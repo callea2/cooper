@@ -37,5 +37,12 @@ module CooperChallange
       generate.assets false
       generate.view_specs false
     end
+
+    config.middleware.insert_before 0, "Rack::Cors" do
+      allow do
+        origins '*'
+        resource '*', headers: :any, methods: [:get, :put, :delete, :post]
+      end
+    end
   end
 end
