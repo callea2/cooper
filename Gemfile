@@ -7,6 +7,7 @@ gem 'turbolinks'
 gem 'rack-cors', require: 'rack/cors'
 gem 'responders', '~> 2.2'
 gem 'devise_token_auth'
+gem 'uglifier'
 
 group :development, :test do
   gem 'pry'
