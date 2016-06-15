@@ -1,6 +1,5 @@
 class Api::V1::PerformanceDataController < ApplicationController
-  before_filter :authenticate_api_v1_user!, except: [:new, :create]
-
+  before_action :authenticate_api_v1_user!
 
   def create
     @data = PerformanceData.new(performance_data_params.merge!({user: current_api_v1_user}))
